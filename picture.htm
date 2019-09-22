@@ -5,14 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
+    <style>
+      #a {
+        width: 640px;
+        height: 260px;
+      }
+      @media (max-width: 600px) {
+        #a {
+          width: 100px;
+          height: 100px;
+        }
+      }
+    </style>
   </head>
   <body>
+    <p>
+      <a
+        href="https://html.spec.whatwg.org/multipage/images.html#adaptive-images"
+        >adaptive-images</a
+      >
+    </p>
 
-    <a href="https://html.spec.whatwg.org/multipage/images.html#adaptive-images">adaptive-images</a>
-  </a>
+    <img
+      sizes="100vw"
+      srcset="./src/cat-300.jpg 400w, ./src/cat-eye.jpg 800w"
+      src="./src/cat.jpg"
+      alt=""
+    />
+
     <picture>
       <source srcset="./src/cat-300.jpg" media="(max-width: 600px)" />
-      <img src="./src/cat.jpg" />
+      <img src="./src/cat.jpg" id="a" />
     </picture>
   </body>
 </html>
